@@ -8,6 +8,7 @@
  */
 // 写法1
 class OddNumPrint extends Thread{
+    @Override
     public void run(){
         for (int i = 0; i < 100; i++) {
             if(i%2==0) {
@@ -17,6 +18,7 @@ class OddNumPrint extends Thread{
     }
 }
 class EvenNumPrint extends Thread{
+    @Override
     public void run(){
         for (int i = 0; i < 100; i++) {
             if(i%2==1) {
@@ -45,5 +47,17 @@ public class Thread1 {
                 }
             };
         }.start();
+
+        // 写法3
+        // 使用实现Runnable接口的方式
+        new Thread(new Runnable() {
+            public void run() {
+                for (int i = 0; i < 100; i++) {
+                    if(i%2==1) {
+                        System.out.println(Thread.currentThread().getName() + ": " + i);
+                    }
+                }
+            }
+        }).start();
     }
 }
