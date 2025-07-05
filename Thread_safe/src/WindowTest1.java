@@ -8,11 +8,11 @@ class Window extends Thread{
     @Override
     public void run() {
         while(true) {
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Thread.sleep(10);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             if(ticket > 0) {
                 System.out.println(Thread.currentThread().getName() + "售票： 票号为" + ticket);
                 ticket--;
